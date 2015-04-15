@@ -22,5 +22,4 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
-Git is a distributed version control system.
-Git is free software.
+倒数第手动的撒旦撒旦
