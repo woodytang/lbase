@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<?php echo $__env->make('admin._layouts.partials.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<body class="fixed-header">
+
+<?php echo $__env->make('admin._layouts.partials.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<!-- START PAGE-CONTAINER -->
+    <div class="page-container">
+    <?php echo $__env->make('admin._layouts.partials.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <!-- START PAGE CONTENT WRAPPER -->
+          <div class="page-content-wrapper">
+            <!-- START PAGE CONTENT -->
+            <div class="content">
+            <?php echo $__env->make('admin._layouts.partials.breadcrumb', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+            <div class="container-fluid container-fixed-lg">
+
+            <?php echo $__env->yieldContent('content'); ?>
+
+            </div>
+            </div>
+            <!-- END PAGE CONTENT -->
+            <?php echo $__env->make('admin._layouts.partials.copyright', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+           </div>
+          <!-- END PAGE CONTENT WRAPPER -->
+
+    </div>
+<!-- END PAGE-CONTAINER -->
+
+
+<?php echo $__env->make('admin._layouts.partials.overlay', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo $__env->make('admin._layouts.partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('amaran::javascript', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+</html>
+

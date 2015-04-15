@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<?php echo $__env->make('front._layouts.partials.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+
+<body class="horizontal-menu">
+
+
+
+<?php echo $__env->make('front._layouts.partials.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+    <!-- BEGIN PAGE CONTAINER-->
+    <div class="page-content">
+
+        <?php echo $__env->make('front._layouts.partials.menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div id="portlet-config" class="modal hide">
+            <div class="modal-header">
+                <button data-dismiss="modal" class="close" type="button"></button>
+                <h3>Widget Settings</h3>
+            </div>
+            <div class="modal-body"> Widget settings form goes here </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="content m-b-40">
+
+        <?php echo $__env->yieldContent('content'); ?>
+        </div>
+
+    </div>
+    <!-- END PAGE CONTAINER-->
+    <?php echo $__env->make('front._layouts.partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+</div>
+<!-- END CONTAINER -->
+
+
+
+<?php echo $__env->make('front._layouts.partials.foot', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+</html>
+

@@ -1,0 +1,191 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4><span class="semi-bold">新增分类</span></h4>
+            </div>
+            <div class="panel-body">
+
+                <form role="form" method="post" action="<?php echo route('admin.categories.store'); ?>">
+                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+
+                    <div class="form-group">
+                        <label class="form-label">名称</label>
+                        <span class="help">这将是它在站点上显示的名字"</span>
+
+                        <div class="controls">
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">别名</label>
+                        <span class="help">别名”是在URL中使用的别称，它可以令URL更美观。通常使用小写，只能包含字母，数字和连字符（-）。</span>
+
+                        <div class="controls">
+                            <input type="text" class="form-control" name="alias">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">类型</label>
+                        <span class="help">选择文章分类或是资源分类</span>
+
+                        <div class="controls">
+                            <select class="full-width" data-init-plugin="select2" name="type">
+                                <option value="文章" selected="selected">文章</option>
+                                <option value="网站">网站</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">父类</label>
+                        <span class="help">分类目录和标签不同，它可以有层级关系。您可以有一个“音乐”分类目录，在这个目录下可以有叫做“流行”和“古典”的子目录。</span>
+                        <select class="full-width" data-init-plugin="select2" name="parent_id">
+
+                            <option value=null selected="selected">无</option>
+                            <?php if(isset($categories)): ?>
+                            <?php foreach($categories as $category): ?>
+                            <?php foreach($category->getDescendantsAndSelf(array('id','parent_id','name','depth'))->toHierarchy()
+                            as $relation): ?>
+
+
+                            <?php if($relation->depth==0): ?>
+                            <option value="<?php echo e($relation->id); ?>">
+                                <?php echo e($relation->name); ?>
+
+                            </option>
+                            <!-- End Check -->
+                            <?php else: ?>
+
+                            <?php for($i = 0; $i < $relation->depth; $i++): ?>
+
+                            <?php endfor; ?>
+                            <option value="<?php echo e($relation->id); ?>">
+                                <?php echo e(str_repeat("&nbsp;&nbsp;",$i+1).'|_'.$relation->name); ?>
+
+                            </option>
+                            <?php endif; ?>
+
+                            <?php endforeach; ?>
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">描述</label>
+                        <span class="help">描述只会在一部分主题中显示。</span>
+
+                        <div class="controls">
+                            <textarea id="text-editor" placeholder="输入文字..." class="form-control"
+                                      rows="10" name="description"></textarea>
+                        </div>
+
+                        <div class="submit pull-right m-t-10">
+                            <input type="submit" value="添加" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>分类 <span class="semi-bold">管理</span></h4>
+
+            </div>
+            <div class="panel-body">
+                <div class="row-fluid">
+                    <div class="span8">
+
+                        <table class="table table-bordered no-more-tables">
+                            <thead>
+                            <tr>
+
+                                <th class="text-center" style="width:20%">名称</th>
+                                <th class="text-center" style="width:5%">ID</th>
+                                <th class="text-center" style="width:16%">别名</th>
+                                <th class="text-center" style="width:16%">类型</th>
+                                <th class="text-center" style="width:16%">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php if(isset($categories)): ?>
+                            <?php foreach($categories as $category): ?>
+                            <?php foreach($category->getDescendantsAndSelf()->toHierarchy() as $relation): ?>
+                            <tr>
+
+                                <?php if($relation->depth==0): ?>
+                                <td class="text-center" ><?php echo e($relation->name); ?></td>
+                                <!-- End Check -->
+                                <?php else: ?>
+                                <?php for($i = 0; $i < $relation->depth; $i++): ?>
+                                <?php endfor; ?>
+                                <td class="text-center" style="text-indent:<?php echo e($i+1); ?>em">--<?php echo e($relation->name); ?></td>
+                                <?php endif; ?>
+
+                                <td class="text-center"><?php echo e($relation->id); ?></td>
+                                <td class="text-center">
+                                    <?php echo e($relation->alias); ?>
+
+                                </td>
+                                <td class="text-center">
+                                    <?php echo e($relation->type); ?>
+
+                                </td>
+                                <td class="text-center">
+
+                                    <div class="row-fluid">
+
+                                        <div class="col-xs-6">
+
+                                            <form method="post"
+                                                  action="<?php echo route('admin.categories.destroy',[$relation->id]); ?>"
+                                                  type="button">
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                                <input type="submit" value="删除" class="btn btn-white btn-xs">
+
+                                            </form>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <a href="<?php echo route('admin.categories.edit',[$relation->id]); ?>">
+                                                <button class="btn btn-white btn-xs">编辑</button>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                            <?php endforeach; ?>
+                            <?php endif; ?>
+                            </tbody>
+                        </table>
+
+
+                        <br>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin._layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

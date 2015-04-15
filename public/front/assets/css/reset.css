@@ -1,0 +1,452 @@
+body{
+    font-size: 14px;
+    background-color: rgb(244, 100, 95);
+    font-family: 微软雅黑;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 微软雅黑 !important;
+
+}
+
+a, a:focus, a:hover, a:active {
+    outline: 0;
+    text-decoration: none;
+    color: #898D99;
+}
+a {
+    text-shadow: none !important;
+    color: #505458;
+    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.1s linear 0s !important;
+}
+
+
+.tile_resize{
+
+    padding: 0 8px 0 0;
+
+}
+
+.right-border{
+    border-style: solid;
+    border-width: 0 1px 0 0px;
+    border-color: #F4F5F7;
+
+}
+
+.left-border{
+    border-style: dotted;
+    border-width: 0 0px 0 1px;
+    border-color: #BDBDBD;
+    min-height: 600px;
+    background-color: #FFFFFF;
+}
+
+.color-red{
+
+    color:#FA503A;
+}
+
+ .tag-list{
+
+     list-style: none;
+     padding: 0;
+     margin-top: 20px;
+
+ }
+
+ .ul-h-list{
+     list-style: none;
+     display: inline-block;
+     padding: 0  !important;
+
+ }
+
+ .ul-h-list li{
+     background-color: rgba(0, 0, 0, 0);
+     background-repeat: no-repeat;
+     background-position: left center;
+     border: none;
+     padding: 0  10px;
+     margin-right: 15px;
+     margin-bottom: 5px;
+     font-size: 13px;
+     font-weight: bold;
+     color: rgb(124, 124, 124);
+     float: left;
+ }
+
+.tag-list li {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+
+
+.recolor{
+    color:rgb(111, 123, 138);
+
+}
+.hashtags.transparent {
+    border: 1px solid #C1C1C1;
+    color: #adadad;
+}
+
+.reset-right{
+
+   padding-right: 5px;
+}
+
+.add-padding{
+    padding: 0 10px;
+}
+
+.reset-padding-bottom{
+
+    padding-bottom: 5px !important;
+
+}
+
+.reset-padding{
+
+    padding:0 5px !important;
+
+}
+
+.reset-padding-right-0{
+
+    padding:0 0px 0 5px !important;
+
+}
+
+.reset-padding-left-0{
+
+    padding:0 5px 0 0 !important;
+
+}
+
+
+
+.set-bg{
+
+
+
+    background: url(/front/assets/img/chimp.jpg) no-repeat fixed center left;
+    background-position: 90px 180px;
+    background-size:112px 120px;
+
+    z-index: 100000;
+
+
+}
+
+
+.set-bg2{
+	background: no-repeat;
+    background-image: url(/front/assets/img/img-recruit08.png);
+    background-position: 15px 5px;
+
+    padding-bottom: 10px !important;
+
+}
+
+.horizontal-menu .bar-inner > ul > li {
+    display: inline-block;
+    padding: 10px 10px;
+    font-family: '微软雅黑';
+    vertical-align: middle;
+}
+
+.overlayer {
+
+    z-index: 000;
+}
+
+.user-profile-pic {
+    z-index: 000;
+}
+
+.add-border-bottom{
+
+    border-style: solid;
+    border-width: 0 0 1px  0;
+    border-color: #F4F5F7;
+
+}
+
+.set-bg-color-white{
+
+    background-color: #fff;
+}
+
+.inpost_image{
+
+    padding-bottom: 20px;
+}
+
+.CodeMirror {
+    border: 1px solid #eee;
+    height: auto;
+}
+.CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.put-down{
+
+    bottom: 15px;
+    position: absolute;
+}
+
+ul.dynatree-container {
+
+    background-color: #EAEAEA;
+
+}
+.logo {
+    margin: 0px 14px;
+}
+
+.white{
+    color: #fff !important;
+}
+
+.grid.simple.vertical.pink {
+    border-left: 4px solid #D1DADE;
+    border-top: none !important;
+}
+
+.text_gray{
+
+    color: slategrey;
+}
+
+.relogo {
+display: inline;
+    position: absolute;
+    left: auto;
+    right: auto;
+
+}
+
+.overlayer-wrapper {
+    position: relative;
+    display: block;
+    z-index: 0;
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+
+
+
+
+
+.tag-item{
+
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+.becenter {
+    left: auto;right: 0;
+    position: relative;
+    text-align: center;
+}
+
+.circle {
+
+    border-radius: 50%;
+    width: 40%;
+    position: relative;
+    margin-top: 15px;
+}
+
+.circle-border {
+    border: 1px solid #F4F5F7;
+}
+
+.circle-solid{
+    background-color: whitesmoke;
+}
+
+.circle:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.circle-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+.score-text {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1em;
+    line-height: 1em;
+    font-size: 1.2em;
+}
+
+.btn-white.disabled{
+
+    border:1px solid #e3e4e5;
+    color: #cecece;
+}
+
+.btn-group a {
+
+}
+
+.btn-group > .btn.btn-white.active {
+    border: 1px solid #e3e4e5;
+    font-size: 15px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    border: 1px solid #fff !important;
+}
+
+ul.footer li{
+
+    padding-left: 0;
+
+
+}
+
+.text_shadow{
+
+    text-shadow: 1px 0px  #cecece;
+}
+
+.row{
+	max-width: 1180px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.horizontal-menu .bar-inner > ul > li > .horizontal li {
+margin: 8px 15px;
+
+}
+
+
+/* website 样式表 */
+.page {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+    width: 1200px;
+    min-height: 100%;
+}
+
+#catalog {
+    margin: 40px 0 0;
+    background-color: rgb(248, 248, 248);
+}
+
+#catalog section {
+    position: relative;
+    height: auto;
+    border: 1px solid rgb(232, 232, 232);
+    margin-top: -1px;
+    overflow: hidden;
+    padding-bottom: 20px;
+
+}
+
+section {
+    display: block;
+}
+
+#catalog header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 166px;
+    background-color: rgb(250, 250, 250);
+}
+
+.website-list {
+    margin: 20px 30px 0 140px;
+    height: auto;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+    zoom: 1;
+    background-color: rgb(255, 255, 255);
+
+    border: solid 1px #F4645F;
+}
+
+.website-list li {
+    float: left;
+    width: 16.6%;
+    min-height: 110px;
+    margin-left: -1px;
+    border-left: 1px dotted rgb(232, 232, 232);
+    overflow: hidden;
+    cursor: pointer;
+    margin-top: 8px;
+    padding-right: 6px;
+    
+}
+
+.website-list li p{
+
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+.website-list li a{
+
+    font-size: 14px;
+    color: #FA726D;
+    font-weight: 800;
+}
+
+.cat_title{
+
+    padding: 30px 20px;
+}
+
+
+.ds-top-threads li{
+
+padding: 0 0 0 18px;
+border-left: 5px solid rgb(238, 238, 238);
+margin-top: 20px;
+list-style-type:none;
+	
+}
+
+.header .quick-section {
+margin-left: 10px;
+
+}
+
+.horizontal-menu .bar-inner > ul > li.active{
+	
+	background-color: white;
+}
+
+

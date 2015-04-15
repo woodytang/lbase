@@ -1,0 +1,11 @@
+<div class="panel-body">
+                              					<?php if(count($errors) > 0): ?>
+                              						<div class="alert alert-danger">
+                              							<strong>抱歉！</strong> 您的输入有误。<br><br>
+                              							<ul>
+                              								<?php foreach($errors->all() as $error): ?>
+                              									<li><?php echo e($error); ?></li>
+                              								<?php endforeach; ?>
+                              							</ul>
+                              						</div>
+                              					<?php endif; ?>

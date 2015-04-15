@@ -1,0 +1,4 @@
+<?php if(Session::has('amaranjs.content')): ?>
+   	<?php echo Session::get('amaranjs.content'); ?>
+
+<?php endif; ?>

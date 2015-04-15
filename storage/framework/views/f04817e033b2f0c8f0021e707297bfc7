@@ -1,0 +1,14 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="row">
+
+<?php echo $__env->make('admin.posts.partials.form_create', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+
+</div>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('admin._layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

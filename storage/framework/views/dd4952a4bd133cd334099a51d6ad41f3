@@ -1,0 +1,162 @@
+    <!-- BEGIN SIDEBPANEL-->
+    <nav class="page-sidebar" data-pages="sidebar">
+      <!-- BEGIN SIDEBAR MENU TOP TRAY CONTENT-->
+      <div class="sidebar-overlay-slide from-top" id="appMenu">
+        <div class="row">
+          <div class="col-xs-6 no-padding">
+            <a href="#" class="p-l-40"><img src="/assets/assets/img/demo/social_app.svg" alt="socail">
+            </a>
+          </div>
+          <div class="col-xs-6 no-padding">
+            <a href="#" class="p-l-10"><img src="/assets/assets/img/demo/email_app.svg" alt="socail">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-6 m-t-20 no-padding">
+            <a href="#" class="p-l-40"><img src="/assets/assets/img/demo/calendar_app.svg" alt="socail">
+            </a>
+          </div>
+          <div class="col-xs-6 m-t-20 no-padding">
+            <a href="#" class="p-l-10"><img src="/assets/assets/img/demo/add_more.svg" alt="socail">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- END SIDEBAR MENU TOP TRAY CONTENT-->
+      <!-- BEGIN SIDEBAR MENU HEADER-->
+      <div class="sidebar-header">
+        <img src="/assets/assets/img/logo_white.png" alt="logo" class="brand" data-src="/assets/assets/img/logo_white.png" data-src-retina="/assets/assets/img/logo_white_2x.png" width="78" height="22">
+        <div class="sidebar-header-controls">
+          <button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" data-pages-toggle="#appMenu"><i class="fa fa-angle-down fs-16"></i>
+          </button>
+          <button type="button" class="btn btn-link visible-lg-inline" data-toggle-pin="sidebar"><i class="fa fs-12"></i>
+          </button>
+        </div>
+      </div>
+      <!-- END SIDEBAR MENU HEADER-->
+      <!-- START SIDEBAR MENU -->
+      <div class="sidebar-menu">
+        <!-- BEGIN SIDEBAR MENU ITEMS-->
+        <ul class="menu-items">
+          <li class="m-t-30 ">
+            <a href="<?php echo url('/admin'); ?>" class="detailed">
+              <span class="title">总控台</span>
+              <span class="details">Dashborad</span>
+            </a>
+            <span class="icon-thumbnail bg-success"><i class="pg-home"></i></span>
+          </li>
+          <li class="">
+            <a href="<?php echo route('admin.posts.index'); ?>" class="detailed">
+              <span class="title">文章</span>
+              <span class="details">Articles</span>
+            </a>
+            <span class="icon-thumbnail "><i class="pg-mail"></i></span>
+          </li>
+
+            <li class="">
+                <a href="<?php echo route('admin.sites.index'); ?>" class="detailed">
+                    <span class="title">网站</span>
+                    <span class="details">Websites</span>
+                </a>
+                <span class="icon-thumbnail "><i class="pg-mail"></i></span>
+            </li>
+
+
+          <li class="">
+                      <a href="<?php echo route('admin.categories.index'); ?>" class="detailed">
+                        <span class="title">分类</span>
+                        <span class="details">Categories</span>
+                      </a>
+                      <span class="icon-thumbnail "><i class="pg-mail"></i></span>
+                    </li>
+
+
+
+
+
+
+          <?php /* <li class="active open">*/ ?>
+          <li class="">
+            <a href="javascript:;"><span class="title">菜单</span>
+
+            <span class="active open arrow"></span></a>
+            <span class="icon-thumbnail"><i class="pg-bag"></i></span>
+            <ul class="sub-menu">
+              <li class="">
+                <a href="<?php echo route('admin.menus.index'); ?>">新建菜单</a>
+                <span class="icon-thumbnail">N</span>
+              </li>
+
+              <li class="active">
+                <a href="<?php echo route('admin.menusets.index'); ?>">新建菜单项</a>
+                <span class="icon-thumbnail">E</span>
+              </li>
+
+            </ul>
+          </li>
+
+            <li class="">
+                <a href="javascript:;"><span class="title">专辑</span>
+
+                    <span class="active open arrow"></span></a>
+                <span class="icon-thumbnail"><i class="pg-bag"></i></span>
+                <ul class="sub-menu">
+                    <li class="">
+                        <a href="<?php echo route('admin.section_contents.index'); ?>">新建目录</a>
+                        <span class="icon-thumbnail">N</span>
+                    </li>
+
+                    <li class="active">
+                        <a href="<?php echo route('admin.sections.index'); ?>">新建专辑</a>
+                        <span class="icon-thumbnail">E</span>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="javascript:;"><span class="title">用户</span>
+
+                    <span class="active open arrow"></span></a>
+                <span class="icon-thumbnail"><i class="fa fa-user"></i></span>
+                <ul class="sub-menu">
+                    <li class="">
+                        <a href="<?php echo route('admin.users.create'); ?>">新建用户</a>
+                        <span class="icon-thumbnail">N</span>
+                    </li>
+
+                    <li class="active">
+                        <a href="<?php echo route('admin.users.index'); ?>">用户列表</a>
+                        <span class="icon-thumbnail">E</span>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="javascript:;"><span class="title">设置</span>
+
+                    <span class="active open arrow"></span></a>
+                <span class="icon-thumbnail"><i class="fa fa-gear
+                "></i></span>
+                <ul class="sub-menu">
+                    <li class="">
+                        <a href="<?php echo url('/admin/settings/features');; ?>">首页设置</a>
+                        <span class="icon-thumbnail">F</span>
+                    </li>
+
+                    <li class="active">
+                        <a href="<?php echo url('/admin/settings/options');; ?>">网站设置</a>
+                        <span class="icon-thumbnail">S</span>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <!-- END SIDEBAR MENU -->
+    </nav>
+    <!-- END SIDEBAR -->

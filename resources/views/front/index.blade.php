@@ -1,0 +1,362 @@
+@extends('front._layouts.default')
+
+@section('custom_css')
+
+
+
+@stop
+
+
+
+@section('content')
+
+<div class="row">
+<div class="col-md-9  m-b-10 reset-padding-right-0">
+
+<div class="row">
+<div class="col-md-6 reset-padding">
+    <div class="widget-item ">
+      
+        <div class="tiles  overflow-hidden full-height" style="max-height:210px">
+            <div class="overlayer bottom-right fullwidth">
+                <div class="overlayer-wrapper">
+                    <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
+                        <div class="pull-right"> <a href="#" class="hashtags white"> {!!$feature_posts['id1']->category->name!!} </a> </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <img src="{!!$feature_posts['id1']->feature->url('medium')!!}" alt="" class="lazy hover-effect-img image-responsive-width"> </div>
+        <div class="tiles white" style="height:215px">
+            <div class="reset-padding-bottom tiles-body ">
+                <div class="row">
+                    <div class="user-profile-pic text-left"> <img width="69" height="69" data-src-retina="{!!$feature_posts['id1']->user->avatar->url('medium')!!}" data-src="{!!$feature_posts['id1']->user->avatar->url('medium')!!}" src="{!!$feature_posts['id1']->user->avatar->url('medium')!!}" alt="">
+                        <div class="pull-right m-r-20 m-t-35"> <span class="bold text-black small-text">{!!$feature_posts['id1']->present()->sillyDate()!!}</span> </div>
+                    </div>
+                    <div class="col-md-4 no-padding">
+                        <div class="user-comment-wrapper">
+                            <div class="comment">
+                                <div class="user-name text-black bold"> {!!$feature_posts['id1']->user->name!!}</div>
+                                <div class="preview-wrapper">@ HD Tech </div>
+                            </div>
+                            <div class="comment">
+
+                                <img width="100" height="100" src="/front/assets/img/others/psb.jpeg">
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 no-padding">
+                        <div class="clearfix"></div>
+                        <div class="m-r-20  m-b-10  m-l-10">
+                            <h4 style="margin-top:2px"><a href="{!!route('post_path',$feature_posts['id1']->id)!!}" title="{!!$feature_posts['id1']->title!!}" > {!!$feature_posts['id1']->title!!}</a></h4>
+                            <p class="p-b-10"> <a href="{!!route('post_path',$feature_posts['id1']->id)!!}" title="{!!$feature_posts['id1']->title!!}" class="muted"> {!!$feature_posts['id1']->present()->getTrimedContent(60)!!}</a></p>
+                            @foreach($feature_posts['id1']->present()->getTags() as $tag)
+                            <a href="{!!route('tag_listing_path',$tag->id)!!}" class="hashtags m-b-5"> #{!! $tag->name !!} </a>
+                        @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 reset-padding" id="small_tile">
+    <div class="row " >
+        <!-- BEGIN ANIMATED TILE -->
+        <div class="col-md-6  m-b-10 tile_resize"  data-aspect-ratio="true">
+            <div class="live-tile slide ha " data-speed="950" data-delay="116000" data-mode="">
+                <div class="slide-front ha tiles adjust-text">
+                    <div class="p-t-20 p-l-20 p-r-20 p-b-20"><i class="fa fa-h-square fa-2x"></i>
+                        <p class="text-white-opacity p-t-10 p-b-10">{!!$feature_posts['id2-1']->present()->sillyDate()!!}</p>
+                        <h4 style="padding-top:20px"><a href="{!!route('post_path',$feature_posts['id2-1']->id)!!}" title="{!!$feature_posts['id2-1']->title!!}" style="text-decoration: none"> {!!$feature_posts['id2-1']->title!!}</a></h4>
+
+                    </div>
+                    <div class="put-down p-l-20 p-r-20 ">
+                    <p class="p-t-20 " ><span class="bold">{!!$feature_posts['id2-1']->clicks!!}</span> 点击&nbsp; &nbsp;   <span class="ds-thread-count" data-thread-key="{{$feature_posts['id2-1']->id}}" data-count-type="comments"></span></p>
+
+                    
+<!-- 多说js加载开始，一个页面只需要加载一次 -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"larabase"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = 'http://static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+                    </div>
+                </div>
+                <div class="slide-back ha tiles blue">
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- END ANIMATED TILE -->
+        <!-- BEGIN ANIMATED TILE -->
+        <div class="col-md-6  m-b-10 tile_resize" data-aspect-ratio="true">
+            <div class="live-tile slide ha " data-speed="750" data-delay="1000" data-mode="">
+                <div class="slide-front ha tiles blue ">
+
+                    <div class="p-t-20 p-l-20 p-r-20 p-b-20"> <i class="fa fa-pagelines fa-2x"></i>
+                        <p class="text-white-opacity p-t-10">{!!$feature_posts['id3-1']->present()->sillyDate()!!}</p>
+                        <h4 style="padding-top:20px"><a href="{!!route('post_path',$feature_posts['id3-1']->id)!!}" title="{!!$feature_posts['id3-1']->title!!}" style="text-decoration: none"> {!!$feature_posts['id3-1']->title!!}</a></h4>
+
+                    </div>
+                    <div class="put-down p-l-20 p-r-20 ">
+                        <p class="p-t-20 " ><span class="bold">{!!$feature_posts['id3-1']->clicks!!}</span> 点击 &nbsp; &nbsp;   <span class="ds-thread-count" data-thread-key="{{$feature_posts['id3-1']->id}}" data-count-type="comments"></span></p>
+                    </div>
+                </div>
+                <div class="slide-back ha tiles blue">
+
+
+                </div>
+            </div>
+        </div>
+        <!-- END ANIMATED TILE -->
+    </div>
+    <div class="row">
+        <!-- BEGIN ANIMATED TILE -->
+        <div class="col-md-6 m-b-10 tile_resize" data-aspect-ratio="true">
+            <div class="live-tile slide ha" data-speed="1050" data-delay="4500" data-mode="">
+                <div class="slide-front ha tiles green">
+                    <div class="p-t-20 p-l-20 p-r-20 p-b-20"><!-- <i class="fa fa-map-marker fa-2x"></i>-->
+                        <p class="text-white-opacity p-t-10">{!!$feature_posts['id4-1']->present()->sillyDate()!!}</p>
+                        <p class="text-white-opacity p-t-20"><h4 style="padding-top:20px"><a href="{!!route('post_path',$feature_posts['id4-1']->id)!!}" title="{!!$feature_posts['id4-1']->title!!}" style="text-decoration: none"> {!!$feature_posts['id4-1']->title!!}</a></h4>
+
+                    </div>
+                    <div class="put-down p-l-20 p-r-20 ">
+                        <p class="p-t-20 " ><span class="bold">{!!$feature_posts['id4-1']->clicks!!}</span> 点击&nbsp; &nbsp;   <span class="ds-thread-count" data-thread-key="{{$feature_posts['id4-1']->id}}" data-count-type="comments"></span></p>
+                    </div>
+                </div>
+                <div class="slide-back ha tiles green">
+
+
+                </div>
+            </div>
+        </div>
+        <!-- END ANIMATED TILE -->
+        <!-- BEGIN ANIMATED TILE -->
+        <div class="col-md-6  m-b-10 tile_resize"  data-aspect-ratio="true">
+            <div class="live-tile slide ha " data-speed="1050" data-delay="8000" data-mode="carousel"  >
+                <div class="slide-front ha tiles green ">
+                    <div class="overlayer bottom-left fullwidth">
+                        <div class="overlayer-wrapper">
+                            <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
+
+                                <a href="{!!route('post_path',$feature_posts['id5-1']->id)!!}" title="{!!$feature_posts['id5-2']->title!!}" style="text-decoration: none"><h5 class="text-white semi-bold "> {!!$feature_posts['id5-1']->title!!}</h5>
+                                <p class="text-white semi-bold no-margin"><i class="icon-custom-up "></i> 阅读更多</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{!!$feature_posts['id5-1']->feature->url('')!!}" alt="" class="image-responsive-width xs-image-responsive-width"> </div>
+                <div class="slide-back ha tiles green">
+                    <div class="overlayer bottom-left fullwidth">
+                        <div class="overlayer-wrapper">
+                            <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
+
+                                <h5 class="text-white semi-bold "><a href="{!!route('post_path',$feature_posts['id5-2']->id)!!}" title="{!!$feature_posts['id5-2']->title!!}" style="text-decoration: none"> {!!$feature_posts['id5-2']->title!!}</a></h5>
+                                <p class="text-white semi-bold no-margin"><i class="icon-custom-up "></i> 阅读更多</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="{!!$feature_posts['id5-2']->feature->url('')!!}" alt="" class="image-responsive-width xs-image-responsive-width">
+                </div>
+            </div>
+        </div>
+        <!-- END ANIMATED TILE -->
+    </div>
+</div>
+
+</div>
+<div class="clearfix"></div>
+<div class="row m-t-20">
+
+    <div class="col-md-4  m-b-10 right-border">
+        <h4>热门<span class="semi-bold color-red">标签</span></h4>
+
+        <div class="tag-list">
+            @foreach($tags as $tag )
+             <a href="{!!route('tag_listing_path',$tag->id)!!}" title="{!!$tag->name!!}" class="hashtags transparent recolor tag-item"> #{!!$tag->name!!} </a>
+
+            @endforeach
+        </div>
+
+
+    </div>
+
+    <div class="col-md-8  m-b-10">
+
+
+
+@foreach($posts as $post)
+    <div class="row m-b-20">
+
+        <div class="col-md-3  m-b-10">
+    <div class="user-mini-description" style="margin-top: 13px">
+        <h5 class="semi-bold text-success">
+            @if(isset($post->category->name))
+        <a href="{!!route('category_listing_path',$post->category->id)!!}" title="{!!$post->category->name!!}" class="text-success">  {!!$post->category->name!!} </a>
+            @else
+            未分类
+            @endif
+        </h5>
+        <h5 style="margin-top: 10px">{!!date('Y-m-d',strtotime($post->created_at))!!}</h5>
+
+    </div>
+    </div>
+
+
+<div class="col-md-9  m-b-10 reset-right">
+    <div class="info-wrapper">
+        <h4 class="semi-bold">
+            <a href="{!!$post->present()->conditionURL()!!}" title="{!!$post->present()->conditionTitle()!!}">  {!!$post->present()->conditionTitle()!!} </a>
+        </h4>
+        <div class="info">
+           
+            {!!$post->present()->getTrimedContent(150)!!}
+        </div>
+    </div>
+</div>
+</div>
+@endforeach
+        {!! $posts->render() !!}
+</div>
+</div>
+
+</div>
+
+<div class="col-md-3 m-b-10 reset-padding-left-0">
+<div class="row">
+
+        <div class="col-md-12 reset-padding">
+            <div class="grid simple vertical green pink">
+                <div class="grid-title no-border ">
+                    <h4> Collections <span class="semi-bold color-red">专辑</span></h4>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse"></a>
+                        <a href="javascript:;" class="reload"></a>
+
+                    </div>
+                </div>
+                <div class="grid-body no-border set-bg2">
+                    <div class="row-fluid">
+                        <a href="{!! action('SectionsController@section',['id'=>1])!!}"  style="color: #000000" target="_self">
+                        <div class="col-md-12 " style="margin-top: 150px">
+
+
+
+                            <img src="/front/assets/img/others/laravel-logo.png" width="60"/><br>
+
+
+                        </div>
+
+                        <h2 style="color:black;padding:0 10px; background-color: rgba(229, 234, 239,0.5);">重读Laravel 5官方文档<i class="fa fa-arrow-circle-right"></i><br><br></h2>
+
+
+                        </a>
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    <div class="col-md-12 reset-padding">
+        <ul class="nav nav-tabs" id="tab-01">
+            <li class="active"><a href="#tab1hellowWorld">阅读最多</a></li>
+            <li><a href="#tab1FollowUs">评论最多</a></li>
+
+
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active reset-padding" id="tab1hellowWorld">
+                <div class="row column-seperation add-padding">
+                    @foreach($most_read as $post)
+
+                    <blockquote class="margin-top-20">
+                    {!!$post->clicks!!}  <small> <a href="{!!route('post_path',$post->id)!!}" title="{!!$post->title!!}"> {!!$post->title!!}</a></small>
+                    </blockquote>
+                    @endforeach
+                </div>
+            </div>
+            <div class="tab-pane reset-padding" id="tab1FollowUs">
+                <div class="row">
+                    <div class="col-md-12 p-t-20 p-b-20">
+
+                    <!-- 多说热评文章 start -->
+    <div class="ds-top-threads duoshuo" data-range="monthly" data-num-items="6"></div>
+<!-- 多说热评文章 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"larabase"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+                    
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-12 reset-padding">
+
+
+
+    </div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+@stop
+
+@section('custom_js')
+
+<script src="/front/assets/js/tabs_accordian.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        
+
+
+    });
+</script>
+
+
+
+@stop

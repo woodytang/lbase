@@ -1,0 +1,112 @@
+
+<div class="bar">
+    <div class="row">
+    <div class="bar-inner">
+        <ul>
+            <?php foreach($menus  as $menu): ?>
+
+            <?php if( Request::url() == Config::get('app.url').$menu->link): ?>
+            <li class="horizontal active">
+            <?php else: ?>
+            <li class="horizontal">
+
+            <?php endif; ?>
+
+                <?php if($menu->getImmediateDescendants()->first()): ?>
+                <a href="javascript:;">
+                    <?php echo e($menu->name); ?> <span class="arrow"></span>
+                </a>
+
+                <ul class="horizontal">
+
+                   <div class="row"> 
+
+                    <?php foreach($menu->getImmediateDescendants() as $submenu): ?>
+
+                    <li> 
+                        <a href="<?php echo Config::get('app.url').$submenu->link; ?>}"><?php echo e($submenu->name); ?></a>
+                    </li>
+                    <?php endforeach; ?>
+
+                    </div>
+  
+                </ul>
+                <?php else: ?>
+                <a href="<?php echo e(Config::get('app.url').$menu->link); ?>">
+                    <?php echo e($menu->name); ?> <span class="arrow" style="color: #F4F5F7"></span>
+                </a>
+                <?php endif; ?>
+            </li>
+            <?php endforeach; ?>
+            <li class="mega ">
+                <a href="javascript:;">
+                    <span class="semi-bold">关于</span><span class="arrow"></span>
+                </a>
+                <ul class="mega ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3 ">
+                                <div class="sub-menu-heading bold"><h3>欢迎！Welcome！</h3></div>
+                                <div style="padding:20px">
+                                <img src="/front/assets/img/chimp.jpg" alt="" data-src="/front/assets/img/chimp.jpg" data-src-retina="/front/assets/img/chimp.jpg" height="135" width="130">
+</div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="sub-menu-heading bold"> 关于</div>
+
+                                <ul class="sub-menu">
+                                    <?php foreach($mega1  as $menu): ?>
+                                    <li > <a href="<?php echo Config::get('app.url').$menu->link; ?>}"><?php echo e($menu->name); ?></a></li>
+                                    <?php endforeach; ?>
+
+                                </ul>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="sub-menu-heading bold">官方资源</div>
+                                <ul class="sub-menu">
+                                    <?php foreach($mega2  as $menu): ?>
+                                    <li > <a href="<?php echo $menu->link; ?>}"><?php echo e($menu->name); ?></a></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <div class="sub-menu-heading bold"> 国内</div>
+                                <ul class="sub-menu">
+                                    <?php foreach($mega3  as $menu): ?>
+                                    <li > <a href="<?php echo $menu->link; ?>}"><?php echo e($menu->name); ?></a></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="sub-menu-heading bold">重要扩展</div>
+                                <ul class="sub-menu">
+                                    <?php foreach($mega4  as $menu): ?>
+                                    <li > <a href="<?php echo $menu->link; ?>}"><?php echo e($menu->name); ?></a></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+    </div>
+
+</div>
+
+<?php $__env->startSection('custom_js'); ?>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        
+
+
+    });
+</script>
+
+
+
+<?php $__env->stopSection(); ?>
